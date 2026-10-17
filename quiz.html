@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Ado Quiz</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">Ado Quiz</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../index.html#como-funciona">Como funciona</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="quiz-page">
+
+    <!-- ÁREA DAS PERGUNTAS -->
+    <section class="quiz-box" id="quiz-box">
+
+      <div class="quiz-topo">
+        <span id="contador">Pergunta 1 de 1</span>
+        <span id="placar">Acertos: 0</span>
+      </div>
+
+      <div class="barra">
+        <div class="barra-preenchida" id="barra-progresso"></div>
+      </div>
+
+      <img id="imagem-pergunta" class="imagem-pergunta" src="" alt="" hidden>
+
+      <h2 id="texto-pergunta">Carregando pergunta...</h2>
+
+      <div class="opcoes" id="opcoes"></div>
+
+      <p class="feedback" id="feedback" aria-live="polite"></p>
+
+      <button class="btn btn-primary" id="btn-proxima" hidden>Próxima</button>
+    </section>
+
+    <!-- ÁREA DO RESULTADO -->
+    <section class="quiz-box resultado" id="resultado" hidden>
+      <h2 id="resultado-titulo">Resultado</h2>
+
+      <img id="resultado-imagem" class="imagem-pergunta" src="" alt="" hidden>
+
+      <p class="resultado-pontos" id="resultado-pontos"></p>
+      <p id="resultado-mensagem"></p>
+
+      <div class="resultado-botoes">
+        <button class="btn btn-primary" id="btn-reiniciar">Jogar de novo</button>
+        <a class="btn btn-secondary" href="../index.html">Voltar ao início</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Projeto de fã sem fins lucrativos. Não tem ligação oficial com a Ado ou sua gravadora.</p>
+    <p>&copy; 2026 Ado Quiz</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+
+html {
+  background-color: #121212;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, p, span, li {
+  color: #f1f1f1;
+}
+
+main {
+  flex: 1;
+  background-color: #121212;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Topo ---------- */
+.header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.navbar {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #f1f1f1;
+}
+
+.nav-links a:hover {
+  color: #3b82f6;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-secondary {
+  background-color: #121212;
+  color: #3b82f6;
+}
+
+.btn-secondary:hover {
+  background-color: #1e1e1e;
+}
+
+/* ---------- Página inicial ---------- */
+.hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  color: #b0b0b0;
+  margin-bottom: 24px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #1e1e1e;
+}
+
+.sobre,
+.como-funciona,
+.cta {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.sobre h2,
+.como-funciona h2,
+.cta h2 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+.sobre p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #b0b0b0;
+}
+
+.cards {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.card-numero {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.card h3 {
+  margin: 10px 0 6px;
+}
+
+.card p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+}
+
+.cta {
+  margin-bottom: 40px;
+}
+
+/* ---------- Rodapé ---------- */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-top: 1px solid #3a3a3a;
+  font-size: 0.85rem;
+}
+
+.footer p {
+  color: #b0b0b0;
+}
+
+/* ==========================================================
+   PÁGINA DO QUIZ
+   ========================================================== */
+.quiz-page {
+  display: flex;
+  justify-content: center;
+  padding: 30px 16px 50px;
+}
+
+.quiz-box {
+  width: 100%;
+  max-width: 650px;
+  height: fit-content;
+  background-color: #1e1e1e;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.quiz-topo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.quiz-topo span {
+  color: #b0b0b0;
+}
+
+.barra {
+  height: 8px;
+  background-color: #333333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.barra-preenchida {
+  height: 100%;
+  width: 0%;
+  background-color: #3b82f6;
+}
+
+.imagem-pergunta {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+#texto-pergunta {
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+
+.opcoes {
+  display: grid;
+  gap: 10px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  background-color: #121212;
+  color: #f1f1f1;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.opcao span {
+  color: #f1f1f1;
+}
+
+.opcao:hover:not(:disabled) {
+  background-color: #2a2a2a;
+  border-color: #3b82f6;
+}
+
+.opcao:disabled {
+  cursor: default;
+}
+
+.opcao-letra {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #333333;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.opcao.correta {
+  border-color: #22c55e;
+  background-color: #12301f;
+}
+
+.opcao.errada {
+  border-color: #ef4444;
+  background-color: #3b1515;
+}
+
+.feedback {
+  min-height: 24px;
+  margin: 14px 0 6px;
+  font-weight: bold;
+}
+
+.feedback.acertou {
+  color: #22c55e;
+}
+
+.feedback.errou {
+  color: #ef4444;
+}
+
+#btn-proxima {
+  margin-top: 8px;
+}
+
+/* ---------- Resultado ---------- */
+.resultado {
+  text-align: center;
+}
+
+.resultado h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.resultado-pontos {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #3b82f6;
+  margin-bottom: 6px;
+}
+
+.resultado p {
+  color: #b0b0b0;
+}
+
+.resultado .resultado-pontos {
+  color: #3b82f6;
+}
+
+.resultado-botoes {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .nav-links {
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+
+  .quiz-box {
+    padding: 18px;
+  }
+
+  #texto-pergunta {
+    font-size: 1.15rem;
+  }
+}
