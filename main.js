@@ -1,10 +1,7 @@
-// ==========================================================
-// ADO QUIZ - main.js
-// Script geral do site (usado em todas as páginas)
-// ==========================================================
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Animação de entrada ao rolar a página
+ 
   const elementos = document.querySelectorAll(
     ".hero-content, .hero-image, .sobre, .card, .cta"
   );
