@@ -1,26 +1,8 @@
-// ==========================================================
-// ADO QUIZ - quiz.js
-// ==========================================================
 
-// ----------------------------------------------------------
-// 1) CONFIGURAÇÕES
-// ----------------------------------------------------------
-const EMBARALHAR_PERGUNTAS = true; // true = ordem aleatória a cada jogo
-const QUANTIDADE_PERGUNTAS = 0;    // 0 = usa todas | ex: 10 = sorteia 10
+const EMBARALHAR_PERGUNTAS = true; 
+const QUANTIDADE_PERGUNTAS = 0;   
 
-// ----------------------------------------------------------
-// 2) SUAS PERGUNTAS (edite aqui!)
-//
-// - pergunta:   texto da pergunta
-// - imagem:     caminho da foto (opcional). Deixe "" se não quiser.
-//               Ex: "../assets/pergunta1.jpg"
-// - opcoes:     lista de alternativas (pode ter de 2 a 6)
-// - correta:    posição da resposta certa (0 = primeira, 1 = segunda...)
-// - explicacao: texto mostrado depois de responder (opcional)
-//
-// Para adicionar outra pergunta, copie um bloco { ... }, e cole
-// depois da vírgula.
-// ----------------------------------------------------------
+
 const perguntas = [
   {
     pergunta: "Em que ano a Ado nasceu?",
@@ -259,17 +241,13 @@ const perguntas = [
   },
 ];
 
-// ----------------------------------------------------------
-// 3) NÍVEIS DO RESULTADO (edite os textos e imagens)
-//    "minimo" = porcentagem mínima de acertos para ganhar o nível.
-//    A ordem deve ser do maior para o menor.
-// ----------------------------------------------------------
+
 const niveis = [
   {
     minimo: 90,
     titulo: "Fã número 1!",
     mensagem: "Você sabe tudo sobre a Ado. Parabéns!",
-    imagem: "", // ex: "../assets/nivel-top.jpg"
+    imagem: "",
   },
   {
     minimo: 60,
@@ -291,12 +269,7 @@ const niveis = [
   },
 ];
 
-// ==========================================================
-// A PARTIR DAQUI É O FUNCIONAMENTO DO QUIZ
-// (só mexa se souber o que está fazendo)
-// ==========================================================
 
-// Elementos da página
 const quizBox = document.getElementById("quiz-box");
 const resultadoBox = document.getElementById("resultado");
 const contador = document.getElementById("contador");
@@ -314,13 +287,13 @@ const resultadoImagem = document.getElementById("resultado-imagem");
 const resultadoPontos = document.getElementById("resultado-pontos");
 const resultadoMensagem = document.getElementById("resultado-mensagem");
 
-// Estado do jogo
+
 let lista = [];
 let indice = 0;
 let pontos = 0;
 let respondeu = false;
 
-// Embaralha uma lista (Fisher-Yates)
+
 function embaralhar(array) {
   const copia = [...array];
   for (let i = copia.length - 1; i > 0; i--) {
@@ -330,7 +303,7 @@ function embaralhar(array) {
   return copia;
 }
 
-// Começa (ou recomeça) o quiz
+
 function iniciarQuiz() {
   lista = EMBARALHAR_PERGUNTAS ? embaralhar(perguntas) : [...perguntas];
 
@@ -347,7 +320,7 @@ function iniciarQuiz() {
   mostrarPergunta();
 }
 
-// Mostra a pergunta atual
+
 function mostrarPergunta() {
   respondeu = false;
   const atual = lista[indice];
@@ -358,7 +331,7 @@ function mostrarPergunta() {
 
   textoPergunta.textContent = atual.pergunta;
 
-  // Imagem da pergunta (opcional)
+ 
   if (atual.imagem) {
     imagemPergunta.src = atual.imagem;
     imagemPergunta.alt = "Imagem da pergunta";
@@ -368,7 +341,7 @@ function mostrarPergunta() {
     imagemPergunta.removeAttribute("src");
   }
 
-  // Alternativas
+
   opcoesBox.innerHTML = "";
   atual.opcoes.forEach((texto, i) => {
     const botao = document.createElement("button");
@@ -392,7 +365,7 @@ function mostrarPergunta() {
   btnProxima.hidden = true;
 }
 
-// Quando o jogador clica em uma alternativa
+
 function escolher(escolhida, botaoClicado) {
   if (respondeu) return;
   respondeu = true;
@@ -420,7 +393,6 @@ function escolher(escolhida, botaoClicado) {
   btnProxima.hidden = false;
 }
 
-// Vai para a próxima pergunta ou para o resultado
 function proxima() {
   if (indice < lista.length - 1) {
     indice++;
